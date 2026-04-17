@@ -1284,6 +1284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662474116}
   - component: {fileID: 662474115}
+  - component: {fileID: 662474117}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1345,7 +1346,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 9.74, y: 3.94}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1365,6 +1366,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &662474117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662474114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aef0c476289040a7aa7df62667e1435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundFade
+  backgrounds:
+  - {fileID: -2991176499343437113, guid: 0c10ec2c86c8245b086a21df02faf522, type: 3}
+  - {fileID: 2801396238707385567, guid: 10ec072f6a51b4cd4b32e27ea57b2e11, type: 3}
+  - {fileID: 8757380299456803465, guid: fe978847b4ee74de6be926c2deb5602b, type: 3}
+  foregrounds:
+  - {fileID: -522987879924544839, guid: 315f884dceaf84dcbb845df26128dbb6, type: 3}
+  - {fileID: -5223345282623002806, guid: 48d728d9ba3f74376812ada0ee094996, type: 3}
+  fg1: {fileID: 1289464449}
+  fg2: {fileID: 1289464449}
+  changeTime: 15
+  fadeDuration: 2
 --- !u!1 &732001648
 GameObject:
   m_ObjectHideFlags: 0
