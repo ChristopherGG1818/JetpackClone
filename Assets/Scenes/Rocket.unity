@@ -1386,8 +1386,10 @@ MonoBehaviour:
   foregrounds:
   - {fileID: -522987879924544839, guid: 315f884dceaf84dcbb845df26128dbb6, type: 3}
   - {fileID: -522987879924544839, guid: 315f884dceaf84dcbb845df26128dbb6, type: 3}
-  - {fileID: -522987879924544839, guid: 315f884dceaf84dcbb845df26128dbb6, type: 3}
   - {fileID: -5223345282623002806, guid: 48d728d9ba3f74376812ada0ee094996, type: 3}
+  - {fileID: -5223345282623002806, guid: 48d728d9ba3f74376812ada0ee094996, type: 3}
+  - {fileID: 940474361598248816, guid: 73eefcd27f6774ffa9fa70417eb200f0, type: 3}
+  - {fileID: 940474361598248816, guid: 73eefcd27f6774ffa9fa70417eb200f0, type: 3}
   fg1: {fileID: 1289464449}
   fg2: {fileID: 929278344}
   changeTime: 15
@@ -1599,8 +1601,8 @@ Transform:
   m_GameObject: {fileID: 929278343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.68, y: -3.19, z: 0}
-  m_LocalScale: {x: 1.3625, y: 1, z: 1}
+  m_LocalPosition: {x: 22.68, y: -2.6432, z: 0}
+  m_LocalScale: {x: 1.3625, y: 1.6844966, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1829,8 +1831,8 @@ Transform:
   m_GameObject: {fileID: 1289464448}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -3.19, z: 0}
-  m_LocalScale: {x: 1.3625, y: 1, z: 1}
+  m_LocalPosition: {x: 0.45, y: -3.1509, z: 0}
+  m_LocalScale: {x: 1.3625, y: 1.4228197, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
