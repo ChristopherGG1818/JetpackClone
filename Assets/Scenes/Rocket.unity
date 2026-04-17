@@ -1496,6 +1496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 929278345}
   - component: {fileID: 929278344}
+  - component: {fileID: 929278346}
   m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
@@ -1571,12 +1572,26 @@ Transform:
   m_GameObject: {fileID: 929278343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -3.19, z: 0}
+  m_LocalPosition: {x: 22.68, y: -3.19, z: 0}
   m_LocalScale: {x: 1.3625, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &929278346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929278343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cab10d95db441838a5ad12ad61072f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForegroundScroll
+  speed: 5
+  width: 20
 --- !u!1 &1000279590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,6 +1726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1289464450}
   - component: {fileID: 1289464449}
+  - component: {fileID: 1289464451}
   m_Layer: 0
   m_Name: Foreground (1)
   m_TagString: Untagged
@@ -1792,6 +1808,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1289464451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289464448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cab10d95db441838a5ad12ad61072f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForegroundScroll
+  speed: 5
+  width: 20
 --- !u!1 &1373992127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,7 +2282,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3126705964796798437, guid: 61e57c2ec65d648208ff8ce3cd64325d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2479,5 +2509,5 @@ SceneRoots:
   - {fileID: 1373992131}
   - {fileID: 1091651730}
   - {fileID: 662474116}
-  - {fileID: 929278345}
   - {fileID: 1289464450}
+  - {fileID: 929278345}
