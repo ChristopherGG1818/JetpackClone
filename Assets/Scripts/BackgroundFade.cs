@@ -5,11 +5,7 @@ public class BackgroundFade : MonoBehaviour
 {
     public Sprite[] backgrounds;
 
-    public Sprite[] foregrounds;
-    public SpriteRenderer fg1;
-    public SpriteRenderer fg2;
-
-    public float changeTime = 15f;
+    public float changeTime = 10f;
     public float fadeDuration = 2f;
 
     private SpriteRenderer sr;
@@ -19,7 +15,9 @@ public class BackgroundFade : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
 
-        // Start with whatever sprite you assigned in Unity (Sky)
+        // Start at sky (index 0)
+        sr.sprite = backgrounds[0];
+
         StartCoroutine(ChangeRoutine());
     }
 
@@ -46,10 +44,10 @@ public class BackgroundFade : MonoBehaviour
             yield return null;
         }
 
-        // INDEX LOGIC (IMPORTANT PART)
+        // INDEX LOGIC (skip 0 after intro)
         if (currentIndex == 0)
         {
-            currentIndex = 1; // Sky → first zone
+            currentIndex = 1;
         }
         else
         {
@@ -57,15 +55,12 @@ public class BackgroundFade : MonoBehaviour
 
             if (currentIndex >= backgrounds.Length)
             {
-                currentIndex = 1; // loop zones, skip sky
+                currentIndex = 1; // loop 1+
             }
         }
 
-        // APPLY NEW SPRITES
+        // CHANGE BACKGROUND
         sr.sprite = backgrounds[currentIndex];
-
-        fg1.sprite = foregrounds[currentIndex];
-        fg2.sprite = foregrounds[currentIndex];
 
         // FADE IN
         t = 0f;
