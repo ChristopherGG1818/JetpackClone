@@ -8,6 +8,7 @@ public class Coin : MonoBehaviour
 
     void Update()
     {
+        float speed = GameSpeedManager.Instance.GetSpeed();
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 
         if (transform.position.x < destroyX)

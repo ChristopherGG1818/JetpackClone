@@ -6,6 +6,7 @@ public class CoinManager : MonoBehaviour
     public static CoinManager Instance;
 
     public TMP_Text coinText;
+
     public AudioSource coinSound;
 
     private int coins = 0;
@@ -19,14 +20,29 @@ public class CoinManager : MonoBehaviour
     {
         coins += amount;
 
+        // play coin sound
         if (coinSound != null)
             coinSound.Play();
 
         UpdateUI();
     }
 
+    // spend coins for power-ups / button
+    public bool SpendCoins(int amount)
+    {
+        if (coins >= amount)
+        {
+            coins -= amount;
+            UpdateUI();
+            return true;
+        }
+
+        return false;
+    }
+
     void UpdateUI()
     {
-        coinText.text = "Coins: " + coins;
+        if (coinText != null)
+            coinText.text = "Coins: " + coins;
     }
 }

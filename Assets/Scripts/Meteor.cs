@@ -8,7 +8,8 @@ public class Meteor : MonoBehaviour
     void Update()
     {
         // move left like obstacles in Jetpack Joyride
-        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        float speed = GameSpeedManager.Instance.GetSpeed();
+        transform.position += Vector3.left * speed * Time.deltaTime;
 
         // clean up off-screen meteors
         if (transform.position.x < -15f)

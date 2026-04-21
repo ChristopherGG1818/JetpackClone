@@ -22,28 +22,20 @@ public class PlayerBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
 
-        // Start with fire OFF
         if (fire != null)
             fire.SetActive(false);
 
-        // Prepare audio
         if (rocketSound != null)
-        {
             rocketSound.loop = true;
-        }
     }
 
     void Update()
     {
         holding = Keyboard.current != null && Keyboard.current.spaceKey.isPressed;
 
-        // FIRE CONTROL
         if (fire != null)
-        {
             fire.SetActive(holding);
-        }
 
-        // AUDIO CONTROL
         if (rocketSound != null)
         {
             if (holding)
@@ -64,9 +56,7 @@ public class PlayerBehavior : MonoBehaviour
     void FixedUpdate()
     {
         if (holding)
-        {
             rb.AddForce(Vector2.up * thrustPower);
-        }
 
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);
         rb.velocity *= drag;
@@ -99,5 +89,31 @@ public class PlayerBehavior : MonoBehaviour
         }
 
         rb.position = pos;
+    }
+
+    //SIMPLE INVISIBILITY
+    public void ActivateInvisibility()
+    {
+        StartCoroutine(InvisibilityRoutine());
+    }
+
+    private System.Collections.IEnumerator InvisibilityRoutine()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        Collider2D col = GetComponent<Collider2D>();
+
+        if (sr != null)
+            sr.color = new Color(1f, 1f, 1f, 0.3f);
+
+        if (col != null)
+            col.enabled = false;
+
+        yield return new WaitForSeconds(5f);
+
+        if (sr != null)
+            sr.color = new Color(1f, 1f, 1f, 1f);
+
+        if (col != null)
+            col.enabled = true;
     }
 }
