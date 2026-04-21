@@ -6,6 +6,8 @@ public class CoinManager : MonoBehaviour
     public static CoinManager Instance;
 
     public TMP_Text coinText;
+    public AudioSource coinSound;
+
     private int coins = 0;
 
     void Awake()
@@ -16,6 +18,10 @@ public class CoinManager : MonoBehaviour
     public void AddCoin(int amount)
     {
         coins += amount;
+
+        if (coinSound != null)
+            coinSound.Play();
+
         UpdateUI();
     }
 

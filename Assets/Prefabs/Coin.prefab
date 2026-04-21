@@ -143,3 +143,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Coin
   moveSpeed: 4
   destroyX: -12
+  collectSound: {fileID: 8300000, guid: dfa3de4b10743454a9aab1079dee027b, type: 3}

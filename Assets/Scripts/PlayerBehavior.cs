@@ -8,6 +8,7 @@ public class PlayerBehavior : MonoBehaviour
     public float drag = 0.98f;
 
     public GameObject fire;
+    public AudioSource rocketSound;
 
     private Rigidbody2D rb;
     private bool holding;
@@ -21,16 +22,41 @@ public class PlayerBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
 
+        // Start with fire OFF
         if (fire != null)
             fire.SetActive(false);
+
+        // Prepare audio
+        if (rocketSound != null)
+        {
+            rocketSound.loop = true;
+        }
     }
 
     void Update()
     {
         holding = Keyboard.current != null && Keyboard.current.spaceKey.isPressed;
 
+        // FIRE CONTROL
         if (fire != null)
+        {
             fire.SetActive(holding);
+        }
+
+        // AUDIO CONTROL
+        if (rocketSound != null)
+        {
+            if (holding)
+            {
+                if (!rocketSound.isPlaying)
+                    rocketSound.Play();
+            }
+            else
+            {
+                if (rocketSound.isPlaying)
+                    rocketSound.Stop();
+            }
+        }
 
         CalculateBounds();
     }
